@@ -24,18 +24,29 @@ namespace C0727172_Harman
 
 
             Alst = new Village();
+            Alst.VillageName = "Alst";
             Maeland = new Village();
+            Maeland.VillageName = "Maeland";
             Maeland.isAstrildeHere = true;
             Schenig = new Village();
+            Schenig.VillageName = "Schenig";
 
             Alst.NextVillage = Maeland;
             Maeland.NextVillage = Schenig;
             Schenig.NextVillage = Alst;
         }
 
-        public void WalkAround()
+        public void FindAstrilde()
         {
-            Village InitializeVillage = this.Maeland;
+
+            Village CurrentVillage = this.Maeland;
+            Village NextVillage;
+            if (CurrentVillage.isAstrildeHere)
+            {
+                Console.WriteLine("Hugi Found Astrilde!!! Celebration!! XoXo!!");
+            }
+
+            NextVillage = CurrentVillage.NextVillage;
         }
     }
 
@@ -50,5 +61,6 @@ namespace C0727172_Harman
 
     }
 }
+
 
 
